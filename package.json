@@ -1,0 +1,29 @@
+{
+  "name": "desafio",
+  "version": "1.0.0",
+  "description": "teste",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wellingtonnascimentto/desafio-blue.git"
+  },
+  "author": "wellington",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/wellingtonnascimentto/desafio-blue/issues"
+  },
+  "homepage": "https://github.com/wellingtonnascimentto/desafio-blue#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
