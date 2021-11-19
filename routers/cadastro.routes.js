@@ -40,19 +40,20 @@ router.get('/listall', async (req,res) => {
     });
 });
 
-router.get('/listallid/:id', async (req,res) => {
-    const id = req.params.id;  //recebendo nome por parametro
-    await cadastro.findOne({ id:id }).then((cadastro) => { //findOne retorna o primeiro que der match com o item passado
-        console.log(cadastro);
-        if(cadastro == null){ //validando se retorna null 
-            res.status(404).json({message: "nao foi encontrado"});
-        }else{
+router.get('/listid/:id', async (req, res) => {
+    await cadastro.findById(req.params.id).then((cadastro) => {
+        if(cadastro == null) {
+            res.status(404).json({message: "Não foi encontrado"});
+            return;
+
+        } else {
             res.status(200).json(cadastro);
-        }
+        };
     }).catch((err) => {
-        res.status(404).json({message:"Nada foi encontrado"});
-        console.error(err);
-    });
+            res.status(204).json({message: "Nada foi encontrado"});
+            console.error(err);
+
+        });
 });
 
 

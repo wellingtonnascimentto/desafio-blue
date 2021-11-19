@@ -8,9 +8,13 @@ const Conn = require("./model/conn/index"); //importando a conexao
 
 Conn(); //executa a func de conexao
 
+app.get('/', (req,res) => {
+res.status(200).json({message:"Desafio Blue!"});
+});
+
 const cadastroRouter = require("./routers/cadastro.routes");
 app.use('/cadastro',cadastroRouter);
-console.log(process.env.PORT)
+
 app.listen(process.env.PORT, () => {
     console.log(`Servidor rodando em: http://localhost:${process.env.PORT}`);
 });
